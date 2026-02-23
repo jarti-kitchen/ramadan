@@ -42,7 +42,8 @@ const elements = {
     header: null,
     navToggle: null,
     navMenu: null,
-    searchSection: null
+    searchSection: null,
+    bottomNavBtns: null
 };
 
 // ========================================
@@ -73,6 +74,7 @@ function initializeElements() {
     elements.navToggle = document.querySelector('.nav-toggle');
     elements.navMenu = document.querySelector('.nav-menu');
     elements.searchSection = document.querySelector('.search-section');
+    elements.bottomNavBtns = document.querySelectorAll('.bottom-nav-btn');
 }
 
 // ========================================
@@ -94,6 +96,10 @@ function setupEventListeners() {
         btn.addEventListener('click', () => {
             const category = btn.dataset.category;
             setActiveFilter(btn);
+            // Sync bottom nav
+            elements.bottomNavBtns.forEach(b => {
+                b.classList.toggle('active', b.dataset.category === category);
+            });
             state.currentCategory = category;
             filterRecipes();
             scrollToRecipes();
@@ -125,6 +131,22 @@ function setupEventListeners() {
         }
     });
 
+    // Bottom navigation (mobile)
+    elements.bottomNavBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.dataset.category;
+            // Sync with filter buttons
+            const filterBtn = document.querySelector(`.filter-btn[data-category="${category}"]`);
+            if (filterBtn) setActiveFilter(filterBtn);
+            // Sync bottom nav active state
+            elements.bottomNavBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            state.currentCategory = category;
+            filterRecipes();
+            scrollToRecipes();
+        });
+    });
+
     // Scroll to top button
     window.addEventListener('scroll', handleScroll);
 
@@ -133,6 +155,22 @@ function setupEventListeners() {
 
     // Mobile navigation toggle
     elements.navToggle.addEventListener('click', toggleMobileNav);
+
+    // Bottom navigation (mobile)
+    elements.bottomNavBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.dataset.category;
+            // Sync with filter buttons
+            const filterBtn = document.querySelector(`.filter-btn[data-category="${category}"]`);
+            if (filterBtn) setActiveFilter(filterBtn);
+            // Sync bottom nav active state
+            elements.bottomNavBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            state.currentCategory = category;
+            filterRecipes();
+            scrollToRecipes();
+        });
+    });
 
     // Scroll to top button
     elements.scrollTop.addEventListener('click', () => {
