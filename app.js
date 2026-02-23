@@ -257,7 +257,12 @@ function categorizeRecipe(title) {
         titleLower.includes('تيراميسو') || titleLower.includes('فالن') ||
         titleLower.includes(' غريبة') || titleLower.includes('حرشة') ||
         titleLower.includes('موفين') || titleLower.includes('كيكة') ||
-        titleLower.includes('ميلفوي')) {
+        titleLower.includes('ميلفوي') || titleLower.includes('cheesecake') ||
+        titleLower.includes('طورطة') || titleLower.includes('كوكيز') ||
+        titleLower.includes('بريوش') || titleLower.includes('كريب') ||
+        titleLower.includes('pain perdu') || titleLower.includes('خبز') ||
+        titleLower.includes('أصابع النابوني') || titleLower.includes('نابوني') ||
+        titleLower.includes('كرات صغيرة')) {
         return 'dessert';
     }
 
@@ -282,7 +287,15 @@ function categorizeRecipe(title) {
         titleLower.includes('مسقعة') || titleLower.includes('محشي') ||
         titleLower.includes('بيتزا') || titleLower.includes('معكرونة') ||
         titleLower.includes('رافيول') || titleLower.includes('باستا') ||
-        titleLower.includes('سيجار')) {
+        titleLower.includes('سيجار') || titleLower.includes('همبرغر') ||
+        titleLower.includes('كرات اللحم') || titleLower.includes('نوكيتس') ||
+        titleLower.includes('النوكيتس') || titleLower.includes('رفيسة') ||
+        titleLower.includes('الضلعة') || titleLower.includes('كرواسان') ||
+        titleLower.includes('فطيرة') || titleLower.includes('فطائر') ||
+        titleLower.includes('سوشي') || titleLower.includes('ماكي') ||
+        titleLower.includes('عجائن') || titleLower.includes('penne') ||
+        titleLower.includes('بشاميل') || titleLower.includes('بيشاميل') ||
+        titleLower.includes('عجين مقلي') || titleLower.includes('قشدة المخ')) {
         return 'principal';
     }
 
@@ -292,6 +305,7 @@ function categorizeRecipe(title) {
         titleLower.includes('الفالفل') || titleLower.includes('المعقودة') ||
         titleLower.includes('زعلوك') || titleLower.includes('بابا غنوج') ||
         titleLower.includes('حمص') || titleLower.includes('فتوش') ||
+        titleLower.includes('بيصارة') ||
         titleLower.includes('ميزة') || titleLower.includes('نيم')) {
         return 'entree';
     }
