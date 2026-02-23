@@ -1394,3 +1394,76 @@ ul, ol {
         border: 1px solid var(--color-gray-300);
     }
 }
+
+/* ========================================
+   Bottom Navigation Mobile
+   ======================================== */
+.bottom-nav {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        background: var(--color-white);
+        box-shadow: 0 -2px 16px rgba(0,0,0,0.12);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 4px 0 env(safe-area-inset-bottom, 4px);
+        border-top: 1px solid var(--color-gray-200);
+    }
+
+    .bottom-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .bottom-nav-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        flex-shrink: 0;
+        padding: 6px 12px;
+        font-size: 0.65rem;
+        font-weight: 500;
+        color: var(--color-gray-500);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        min-width: 60px;
+    }
+
+    .bottom-nav-btn span:first-child {
+        font-size: 1.3rem;
+    }
+
+    .bottom-nav-btn.active {
+        color: var(--color-primary);
+    }
+
+    .bottom-nav-btn.active span:first-child {
+        transform: scale(1.2);
+    }
+
+    /* Hide filter bar on mobile since we have bottom nav */
+    .filter-wrapper {
+        display: none;
+    }
+
+    /* Add padding to body so content not hidden behind bottom nav */
+    body {
+        padding-bottom: 65px;
+    }
+
+    .scroll-top {
+        bottom: 75px;
+    }
+}
