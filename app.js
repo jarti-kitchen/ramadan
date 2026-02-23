@@ -253,7 +253,7 @@ function categorizeRecipe(title) {
         titleLower.includes('كراميل') || titleLower.includes('كريم') ||
         titleLower.includes('تيراميسو') || titleLower.includes('فالن') ||
         titleLower.includes(' غريبة') || titleLower.includes('حرشة') ||
-        titleLower.includes('موفين') || titleLower.includes('كيكة'))  ||
+        titleLower.includes('موفين') || titleLower.includes('كيكة') ||
         titleLower.includes('ميلفوي')) {
         return 'dessert';
     }
@@ -457,7 +457,7 @@ function updateRecipeCount() {
 }
 
 function updateCategoryCounts() {
-    const categories = ['principal', 'entree', 'dessert', 'soupe', 'poisson', 'volaille', 'boisson', 'autre'];
+    const categories = ['principal', 'entree', 'dessert', 'soupe', 'poisson', 'volaille', 'boisson'];
 
     categories.forEach(category => {
         const count = state.recipes.filter(recipe => categorizeRecipe(recipe.title) === category).length;
