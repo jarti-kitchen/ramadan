@@ -159,6 +159,24 @@ ul, ol {
 .header.scrolled {
     background: rgba(26, 35, 126, 0.98);
     backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header.scrolled .header-content {
+    padding: var(--space-xs) var(--space-lg);
+}
+
+.header.scrolled .logo-icon {
+    font-size: var(--font-size-xl);
+    animation: none;
+}
+
+.header.scrolled .logo h1 {
+    font-size: var(--font-size-lg);
+}
+
+.header.scrolled .logo-subtitle {
+    display: none;
 }
 
 .header-content {
@@ -168,6 +186,7 @@ ul, ol {
     padding: var(--space-md) var(--space-lg);
     max-width: 1280px;
     margin: 0 auto;
+    transition: padding var(--transition-base);
 }
 
 .logo {
