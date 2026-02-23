@@ -328,9 +328,7 @@ function getCategoryLabel(category) {
         soupe: 'شوربة',
         poisson: 'أسماك',
         volaille: 'دواجن',
-        boisson: 'مشروبات',
-        autre: 'اخر'
-    
+        boisson: 'مشروبات'
     };
     return labels[category] || 'وصفات';
 }
@@ -482,7 +480,7 @@ function updateRecipeCount() {
 }
 
 function updateCategoryCounts() {
-    const categories = ['principal', 'entree', 'dessert', 'soupe', 'poisson', 'volaille', 'boisson', 'autre'];
+    const categories = ['principal', 'entree', 'dessert', 'soupe', 'poisson', 'volaille', 'boisson'];
 
     categories.forEach(category => {
         const count = state.recipes.filter(recipe => categorizeRecipe(recipe.title) === category).length;
