@@ -132,6 +132,14 @@ function setupEventListeners() {
     // Mobile navigation toggle
     elements.navToggle.addEventListener('click', toggleMobileNav);
 
+    // Scroll to top button
+    elements.scrollTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -535,13 +543,7 @@ function toggleMobileNav() {
     );
 }
 
-// Scroll to top button click
-elements.scrollTop.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
+
 
 // ========================================
 // Utility Functions
