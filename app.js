@@ -243,7 +243,7 @@ function categorizeRecipe(title) {
 
     // Fish/Seafood dishes
     if (titleLower.includes('سمك') || titleLower.includes('سوريمي') ||
-        titleLower.includes('حبار') || titleLower.includes('روبيان') {
+        titleLower.includes('حبار') || titleLower.includes('روبيان')) {
         return 'poisson';
     }
 
@@ -295,6 +295,8 @@ function categorizeRecipe(title) {
         return 'boisson';
     }
 
+    return 'autre';
+}
 
 function getCategoryLabel(category) {
     const labels = {
