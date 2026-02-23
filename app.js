@@ -242,13 +242,16 @@ function categorizeRecipe(title) {
     const titleLower = title.toLowerCase();
 
     // Fish/Seafood dishes
-    if (titleLower.includes('سمك') || titleLower.includes('سوريمي') ||
+    if (titleLower.includes('سمك') || titleLower.includes('سوريمي') || 
+        titleLower.includes('كيكة بالتونة') ||
+        titleLower.includes('صبيعات') ||
         titleLower.includes('حبار') || titleLower.includes('روبيان')) {
         return 'poisson';
     }
 
     // Desserts
     if (titleLower.includes('حلوى') || titleLower.includes('كيك') ||
+        titleLower.includes('الغريبة') ||
         titleLower.includes('بسكويت') || titleLower.includes('شيبوا') ||
         titleLower.includes('كراميل') || titleLower.includes('كريم') ||
         titleLower.includes('تيراميسو') || titleLower.includes('فالن') ||
@@ -266,12 +269,14 @@ function categorizeRecipe(title) {
 
     // Poultry
     if (titleLower.includes('دجاج') || titleLower.includes('فيليه الديك الرومي') ||
+        titleLower.includes('كبد') ||
         titleLower.includes('كوكلي')) {
         return 'volaille';
     }
 
     // Main dishes
     if (titleLower.includes('أرز') || titleLower.includes('كباب') ||
+        titleLower.includes('طاباص') ||
         titleLower.includes('كفتة') || titleLower.includes('طاجين') ||
         titleLower.includes('بريوات') || titleLower.includes('مقلوبة') ||
         titleLower.includes('مسقعة') || titleLower.includes('محشي') ||
@@ -283,6 +288,8 @@ function categorizeRecipe(title) {
 
     // Appetizers/Starters
     if (titleLower.includes('مقبلات') || titleLower.includes('سلطة') ||
+        titleLower.includes('مازة') ||
+        titleLower.includes('الفالفل') || titleLower.includes('المعقودة') ||
         titleLower.includes('زعلوك') || titleLower.includes('بابا غنوج') ||
         titleLower.includes('حمص') || titleLower.includes('فتوش') ||
         titleLower.includes('ميزة') || titleLower.includes('نيم')) {
@@ -291,7 +298,8 @@ function categorizeRecipe(title) {
 
     // Beverages
     if (titleLower.includes('مشروب') || titleLower.includes('عصير') ||
-        titleLower.includes('شاي') || titleLower.includes('قهوة')) {
+        titleLower.includes('بانوفي') ||
+        titleLower.includes('شاي') || titleLower.includes('رايبي')) {
         return 'boisson';
     }
 
@@ -306,7 +314,8 @@ function getCategoryLabel(category) {
         soupe: 'شوربة',
         poisson: 'أسماك',
         volaille: 'دواجن',
-        boisson: 'مشروبات'
+        boisson: 'مشروبات',
+        autre: 'اخر'
     
     };
     return labels[category] || 'وصفات';
@@ -459,7 +468,7 @@ function updateRecipeCount() {
 }
 
 function updateCategoryCounts() {
-    const categories = ['principal', 'entree', 'dessert', 'soupe', 'poisson', 'volaille', 'boisson'];
+    const categories = ['principal', 'entree', 'dessert', 'soupe', 'poisson', 'volaille', 'boisson', 'autre'];
 
     categories.forEach(category => {
         const count = state.recipes.filter(recipe => categorizeRecipe(recipe.title) === category).length;
