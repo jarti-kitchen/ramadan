@@ -41,7 +41,8 @@ const elements = {
     scrollTop: null,
     header: null,
     navToggle: null,
-    navMenu: null
+    navMenu: null,
+    searchSection: null
 };
 
 // ========================================
@@ -71,6 +72,7 @@ function initializeElements() {
     elements.header = document.querySelector('.header');
     elements.navToggle = document.querySelector('.nav-toggle');
     elements.navMenu = document.querySelector('.nav-menu');
+    elements.searchSection = document.querySelector('.search-section');
 }
 
 // ========================================
@@ -529,8 +531,10 @@ function handleScroll() {
 function handleHeaderScroll() {
     if (window.pageYOffset > 50) {
         elements.header.classList.add('scrolled');
+        elements.searchSection.classList.add('scrolled');
     } else {
         elements.header.classList.remove('scrolled');
+        elements.searchSection.classList.remove('scrolled');
     }
 }
 
