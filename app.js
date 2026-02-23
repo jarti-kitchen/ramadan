@@ -243,8 +243,7 @@ function categorizeRecipe(title) {
 
     // Fish/Seafood dishes
     if (titleLower.includes('سمك') || titleLower.includes('سوريمي') ||
-        titleLower.includes('حبار') || titleLower.includes('روبيان') ||
-        titleLower.includes('ميلفوي')) {
+        titleLower.includes('حبار') || titleLower.includes('روبيان') {
         return 'poisson';
     }
 
@@ -254,7 +253,8 @@ function categorizeRecipe(title) {
         titleLower.includes('كراميل') || titleLower.includes('كريم') ||
         titleLower.includes('تيراميسو') || titleLower.includes('فالن') ||
         titleLower.includes(' غريبة') || titleLower.includes('حرشة') ||
-        titleLower.includes('موفين') || titleLower.includes('كيكة')) {
+        titleLower.includes('موفين') || titleLower.includes('كيكة'))  ||
+        titleLower.includes('ميلفوي')) {
         return 'dessert';
     }
 
@@ -295,8 +295,6 @@ function categorizeRecipe(title) {
         return 'boisson';
     }
 
-    return 'autre';
-}
 
 function getCategoryLabel(category) {
     const labels = {
@@ -306,7 +304,8 @@ function getCategoryLabel(category) {
         soupe: 'شوربة',
         poisson: 'أسماك',
         volaille: 'دواجن',
-        autre: 'أخرى'
+        boisson: 'مشروبات'
+    
     };
     return labels[category] || 'وصفات';
 }
