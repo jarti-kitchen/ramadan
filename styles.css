@@ -463,6 +463,36 @@ ul, ol {
     position: sticky;
     top: 70px;
     z-index: var(--z-sticky);
+    transition: all 0.3s ease;
+}
+
+.search-section.scrolled {
+    padding: 6px 0;
+    top: 38px;
+}
+
+.search-section.scrolled .search-box {
+    max-width: 400px;
+}
+
+.search-section.scrolled .search-input {
+    padding: 6px var(--space-lg);
+    padding-left: 50px;
+    font-size: var(--font-size-sm);
+    border-radius: var(--radius-lg);
+}
+
+.search-section.scrolled .filter-btn {
+    padding: 2px 8px;
+    font-size: 0.72rem;
+}
+
+.search-section.scrolled .filter-icon {
+    font-size: 0.8rem;
+}
+
+.search-section.scrolled .filter-wrapper {
+    gap: 4px;
 }
 
 .search-wrapper {
